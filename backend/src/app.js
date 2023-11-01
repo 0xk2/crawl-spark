@@ -22,8 +22,21 @@ app.use(bodyParser.json());
   }
 */
 const generateCSSSelector = (index) => {
+  let group = 1;
+  if (index < 18) {
+    group = 1;
+  } else if (index < 37) {
+    index = index - 36;
+    group = 2;
+  } else if (index < 55) {
+    index = index - 54;
+    group = 3;
+  }
+  // a lot more to come
   return (
-    '.analysis-indicators-list__group:nth-child(1) > div:nth-child(' +
+    '.analysis-indicators-list__group:nth-child(' +
+    group +
+    ') > div:nth-child(' +
     index +
     ') > .analysis-indicators-list__item'
   );
