@@ -26,9 +26,9 @@ const generateCSSSelector = (index) => {
   if (index < 18) {
     group = 1;
   } else if (index < 37) {
-    index = index - 36;
+    index = index - 18;
     group = 2;
-  } else if (index < 55) {
+  } else if (index < 37) {
     index = index - 54;
     group = 3;
   }
