@@ -88,6 +88,42 @@ app.post('/insert', async (req, res) => {
   }
 });
 
+// Get everything
+app.get('/all', async (req, res) => {
+  const { data, error } = await supabase.from('tblTask').select();
+  if (error) {
+    res.status(404).send('Error getting all tasks');
+  } else {
+    res.send({ data });
+  }
+});
+
+// Only task with 'processing'
+app.get('/processing', async (req, res) => {
+  const { data, error } = await supabase
+    .from('tblTask')
+    .select()
+    .eq('status', 'processing');
+  if (error) {
+    res.status(404).send('Error getting processing tasks');
+  } else {
+    res.send({ data });
+  }
+});
+
+// Only task with 'selectionCreated'
+app.get('/screated', async (req, res) => {
+  const { data, error } = await supabase
+    .from('tblTask')
+    .select()
+    .eq('status', 'selectionCreated');
+  if (error) {
+    res.status(404).send('Error getting selectionCreated tasks');
+  } else {
+    res.send({ data });
+  }
+});
+
 app.listen(port, () => {
   console.log(`spark app listening on port ${port}`);
 });
