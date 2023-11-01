@@ -56,7 +56,9 @@ app.get('/next', async (req, res) => {
       .update({ status: 'processing' })
       .eq('id', task.id);
     if (!error) {
-      res.send(task);
+      res.send({
+        task,
+      });
     }
   }
 });
