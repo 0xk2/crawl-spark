@@ -1,1 +1,8 @@
-{"123":[".analysis-indicators-list__group:nth-child(1) > div:nth-child(3) > .analysis-indicators-list__item",".analysis-indicators-list__group:nth-child(1) > div:nth-child(6) > .analysis-indicators-list__item",".analysis-indicators-list__group:nth-child(1) > div:nth-child(8) > .analysis-indicators-list__item"],"current":"123"}
+{
+    "123": [
+        ".analysis-indicators-list__group:nth-child(1) > div:nth-child(3) > .analysis-indicators-list__item",
+        ".analysis-indicators-list__group:nth-child(1) > div:nth-child(6) > .analysis-indicators-list__item",
+        ".analysis-indicators-list__group:nth-child(1) > div:nth-child(8) > .analysis-indicators-list__item"
+    ],
+    "current": "123"
+}
