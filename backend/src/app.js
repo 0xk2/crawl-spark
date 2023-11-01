@@ -124,6 +124,18 @@ app.get('/screated', async (req, res) => {
   }
 });
 
+app.post('/reset', async (req, res) => {
+  const { id } = req.body;
+  const { error } = await supabase
+    .from('tblTask')
+    .update({ status: 'new' })
+    .eq('id', id);
+  if (error) {
+    res.status(404).send('Error resetting task');
+  }
+  res.send({ ok: true });
+});
+
 app.listen(port, () => {
   console.log(`spark app listening on port ${port}`);
 });
