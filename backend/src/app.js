@@ -76,6 +76,18 @@ app.post('/save', async (req, res) => {
   }
 });
 
+app.post('/insert', async (req, res) => {
+  const { selectorIndexes } = req.body;
+  const { error } = await supabase
+    .from('tblTask')
+    .insert({ selectorIndexes, status: 'new' });
+  if (error) {
+    res.status(404).send('Error inserting task');
+  } else {
+    res.send({ ok: true });
+  }
+});
+
 app.listen(port, () => {
   console.log(`spark app listening on port ${port}`);
 });
